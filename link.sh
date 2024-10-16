@@ -36,6 +36,10 @@ case $1 in
 		dir="$(pwd)/shell-term/kitty"
 		dest="$HOME/.config/kitty"
 		;;
+	"doom")
+		dir="$(pwd)/doom/.doom.d"
+		dest="$HOME/.doom.d"
+		;;
 	*)
 		echo "error: not a valid config name!"
 		exit 1
