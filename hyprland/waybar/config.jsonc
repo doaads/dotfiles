@@ -1,0 +1,107 @@
+{
+    "layer": "top",
+    "position": "top",
+    "modules-left": ["hyprland/workspaces"],
+    "modules-center": ["hyprland/window"],
+    "modules-right": ["tray", "upower", "power-profiles-daemon", "pulseaudio", "clock"],
+
+    "hyprland/workspaces": {
+		"format": "{icon} {windows}",
+		"format-icons": {
+			"magic": "󱡄 "
+		},
+		"persistent-workspaces": {
+			"*": 2
+		},
+		"window-rewrite-default": "",
+		"window-rewrite": {
+			"class<firefox>": " ", // Windows whose classes are "firefox",
+			"kitty": " "
+		},
+		"show-special": true
+	},
+
+	"hyprland/window": {
+		"format": "󱞡  {}",
+		"separate-outputs": true,
+		"max-length": 100
+	},
+
+    "clock": {
+        "format": "{:%H:%M}",
+        "format-alt": "{:%a %b %d}",
+        "tooltip": false
+    },
+	
+	// REPLACED WITH UPOWER FOR NOW DUE TO BAD PERFORMANCE
+    //"battery": {
+    //    "states": {
+    //        "good": 95,
+    //        "warning": 30,
+    //        "critical": 15
+    //    },
+    //    //"bat":"BAT1",
+    //    "format": "{icon}  {capacity}%",
+    //    "format-charging": "  {capacity}%",
+    //    "format-plugged": "  {capacity}%",
+    //    "format-discharging": " {capacity}%",
+    //    //"format-alt": "{icon} {time}",
+    //    "format-icons": ["", "", "", "", ""]
+    //},
+
+	"upower": {
+		"native-path": "BAT0",
+		"icon-size": 16,
+		"tooltip": true,
+		"tooltip-spacing": 16,
+		//"format-alt": "abcdef"
+		"menu": "on-click",
+        "menu-file": "~/.config/waybar/power_menu.xml",
+        "menu-actions": {
+			"shutdown": "shutdown",
+			"reboot": "reboot",
+			"suspend": "systemctl suspend",
+		}
+	},
+
+    "network": {
+        "format": "{ifname}",
+        "format-wifi": "  {essid}",
+        "format-ethernet": "  {ifname}",
+        "format-disconnected": "󱘖 ",
+        "tooltip-format-wifi": " {signalStrength}%",
+        "max-length": 30,
+    },
+
+    "pulseaudio": {
+        "format": "{icon}  {volume}%",
+        "format-bluetooth": "{icon}  {volume}%",
+        "format-muted": "",
+        "format-icons": {
+            "headphone": "",
+            "hands-free": "",
+            "headset": "",
+            "phone": "",
+            "portable": "",
+            "car": "",
+            "default": ["", ""]
+        },
+        "scroll-step": 1,
+        "on-click": "pavucontrol"
+    },
+
+	"power-profiles-daemon": {
+      "format": "{icon}",
+      "tooltip-format": "Power profile: {profile}\nDriver: {driver}",
+      "tooltip": true,
+      "format-icons": {
+        "default": " ",
+        "performance": " ",
+        "balanced": " ",
+        "power-saver": " "
+      }
+    },
+},
+
+}
+

@@ -1,0 +1,91 @@
+* {
+  font-size: 20px;
+  font-family: "ProggyClean Nerd Font";
+}
+
+window#waybar {
+    background: rgba(0,0,0,0);
+}
+
+#tray {
+  background: #1d1f21;
+  color: #c5c8c6;
+  margin: 3px 0px 3px 0px;
+  padding: 5px 5px 5px 8px; 
+  border-top-left-radius: 10px;
+  border-bottom-left-radius: 10px;
+}
+
+#upower {
+  margin: 3px 0px 3px 0px;
+  background: #1d1f21;
+  padding: 5px;
+  color: #c5c8c6;
+}
+
+#workspaces {
+  margin: 0px 3px 3px 3px;
+}
+
+#workspaces button.visible {
+  background: #1d1f21;
+  color: #c5c8c6;
+  margin: 3px 3px 3px 3px;
+  padding: 0px 5px 0px 5px;
+}
+
+window#waybar.empty #window {
+	background-color: transparent;
+	/*opacity: 0.0;*/
+}
+
+#custom-power {
+  margin: 3px 3px 3px 3px;
+  padding: 5px 10px 5px 0px;
+  border-top-left-radius: 2px;
+  border-bottom-left-radius: 2px;
+  /*color: #FFF;*/
+}
+
+#clock {
+  margin: 3px 3px 3px 3px;
+  padding: 5px 8px 5px 8px;
+  color: #FFF;
+  background: #1d1f21;
+  border-top-left-radius: 10px;
+  border-bottom-left-radius: 10px;
+  border-top-right-radius: 10px;
+  border-bottom-right-radius: 10px;
+  color: #c5c8c6;
+}
+
+#pulseaudio {
+  margin: 3px 3px 3px 0px;
+  padding: 5px 8px 5px 5px;
+  background: #1d1f21;
+  border-top-right-radius: 10px;
+  border-bottom-right-radius: 10px;
+  color: #c5c8c6;
+}
+
+#network {
+  background: #1d1f21;
+  color: #c5c8c6;
+  margin: 3px 0px 3px 0px;
+  padding: 5px 5px 5px 8px; 
+  border-top-left-radius: 10px;
+  border-bottom-left-radius: 10px;
+}
+
+#power-profiles-daemon {
+  margin: 3px 0px 3px 0px;
+  background: #1d1f21;
+  padding: 5px;
+  color: #c5c8c6;
+}
+
+menu {
+  background: #1d1f21;
+  color: #c5c8c6;
+}
+
