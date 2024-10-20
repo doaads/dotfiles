@@ -41,15 +41,16 @@ local lsp_flags = {
 	debounce_text_changes = 150,
 }
 
-require'lspconfig'.pyright.setup(coq.lsp_ensure_capabilities( {
-	on_attach = on_attach,
-}))
+--require'lspconfig'.pyright.setup(coq.lsp_ensure_capabilities( {
+--	on_attach = on_attach,
+--}))
 
 require'lspconfig'.ruff.setup(( {
 	on_attach = on_attach,
 }))
 
 require'lspconfig'.clangd.setup(coq.lsp_ensure_capabilities( {
+	on_attach = on_attach,
 	cmd = {
 		"clangd",
 		"--background-index",

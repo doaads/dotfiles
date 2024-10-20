@@ -3,8 +3,16 @@
 ;; Place your private configuration here! Remember, you do not need to run 'doom
 ;; sync' after modifying this file!
 
+;; font size
+(set-face-attribute 'default nil :height 120)
 
+(elfeed-org)
+(setq rmh-elfeed-org-files (list "~/org/elfeed.org"))
 
+;(setq browse-url-browser-function 'eww-browse-url)
+
+(setq browse-url-browser-function 'browse-url-generic
+      browse-url-generic-program "firefox")
 
 ;; Some functionality uses this to identify you, e.g. GPG configuration, email
 ;; clients, file templates and snippets. It is optional.
