@@ -13,7 +13,7 @@
 		"persistent-workspaces": {
 			"*": 0
 		},
-		//"window-rewrite-default": " ",
+		"window-rewrite-default": "",
 		"window-rewrite": {
 			"class<firefox>": " ", // Windows whose classes are "firefox",
 			"kitty": " ",
