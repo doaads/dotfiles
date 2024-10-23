@@ -6,6 +6,9 @@
 ;; font size
 (set-face-attribute 'default nil :height 120)
 
+;; relative line numbers
+(setq doom-line-numbers-style 'relative)
+
 (elfeed-org)
 (setq rmh-elfeed-org-files (list "~/org/elfeed.org"))
 
@@ -29,7 +32,7 @@
 ;; - `doom-serif-font' -- for the `fixed-pitch-serif' face
 ;;
 ;; See 'C-h v doom-font' for documentation and more examples of what they
-;; accept. For example:
+;; accepT. For example:
 ;;
 ;;(setq doom-font (font-spec :family "Fira Code" :size 12 :weight 'semi-light)
 ;;      doom-variable-pitch-font (font-spec :family "Fira Sans" :size 13))
