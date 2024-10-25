@@ -12,6 +12,9 @@
 (elfeed-org)
 (setq rmh-elfeed-org-files (list "~/org/elfeed.org"))
 
+;; org mode
+(setq org-startup-folded t)
+
 ;(setq browse-url-browser-function 'eww-browse-url)
 
 (setq browse-url-browser-function 'browse-url-generic

@@ -50,14 +50,17 @@ require'lspconfig'.ruff.setup(( {
 	on_attach = on_attach,
 }))
 
-require'lspconfig'.clangd.setup(coq.lsp_ensure_capabilities( {
+--require'lspconfig'.clangd.setup(coq.lsp_ensure_capabilities( {
+--	on_attach = on_attach,
+--}))
+
+require'lspconfig'.ccls.setup(coq.lsp_ensure_capabilities( {
 	on_attach = on_attach,
-	cmd = {
-		"clangd",
-		"--background-index",
-		"--fallback-style={IndentWidth: 4}"
-		--"--clang-tidy"
-	},
+	init_options = {
+		cache = {
+			directory = "/tmp/ccls_cache"
+		}
+	}
 }))
 
 require'lspconfig'.rust_analyzer.setup(coq.lsp_ensure_capabilities( {
