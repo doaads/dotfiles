@@ -12,7 +12,7 @@ local function load_imports()
 		'configs/treesitter_config',
 		'configs/lsp_config',
 		'configs/transparent_config',
-		'configs/trouble_config',
+		'configs/lint_config',
 	}
 
 	for _, file in ipairs(files) do

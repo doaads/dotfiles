@@ -13,14 +13,14 @@
 return require('packer').startup(function(use)
 	use 'wbthomason/packer.nvim' -- packer
 
-	-- -------- LSP Plugins --------------
+	-- -------- LSP / Linters --------------
 
 	use {
 		"williamboman/mason.nvim", -- mason
 		"williamboman/mason-lspconfig.nvim",
 		'neovim/nvim-lspconfig',
 		'kosayoda/nvim-lightbulb', -- show lightbulb at code action
-		"lukas-reineke/lsp-format.nvim", -- lsp format
+		'mfussenegger/nvim-lint', -- linters
 	}
 
 	-- -------- Treesitter --------------

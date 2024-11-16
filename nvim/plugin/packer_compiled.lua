@@ -124,11 +124,6 @@ _G.packer_plugins = {
     path = "/home/doaads/.local/share/nvim/site/pack/packer/start/kanagawa.nvim",
     url = "https://github.com/rebelot/kanagawa.nvim"
   },
-  ["lsp-format.nvim"] = {
-    loaded = true,
-    path = "/home/doaads/.local/share/nvim/site/pack/packer/start/lsp-format.nvim",
-    url = "https://github.com/lukas-reineke/lsp-format.nvim"
-  },
   ["lualine.nvim"] = {
     loaded = true,
     path = "/home/doaads/.local/share/nvim/site/pack/packer/start/lualine.nvim",

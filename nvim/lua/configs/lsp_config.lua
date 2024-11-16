@@ -33,7 +33,7 @@ local on_attach = function(client, bufnr)
 	vim.keymap.set('n', '<space>rn', vim.lsp.buf.rename, bufopts)
 	vim.keymap.set('n', '<space>ca', vim.lsp.buf.code_action, bufopts)
 	vim.keymap.set('n', 'gr', vim.lsp.buf.references, bufopts)
-	vim.keymap.set('n', '<space>f', function() vim.lsp.buf.format { async = true } end, bufopts)
+	--	vim.keymap.set('n', '<space>f', function() vim.lsp.buf.format { async = true } end, bufopts)
 	vim.keymap.set('n', 'g?', vim.diagnostic.open_float, bufopts)
 end
 
@@ -46,21 +46,21 @@ local lsp_flags = {
 --	on_attach = on_attach,
 --}))
 
-require'lspconfig'.ruff.setup(( {
+require'lspconfig'.pyright.setup(( {
 	on_attach = on_attach,
 }))
 
---require'lspconfig'.clangd.setup(coq.lsp_ensure_capabilities( {
+--require'lspconfig'.ccls.setup(coq.lsp_ensure_capabilities( {
 --	on_attach = on_attach,
+--	init_options = {
+--		cache = {
+--			directory = "/tmp/ccls_cache"
+--		}
+--	}
 --}))
 
-require'lspconfig'.ccls.setup(coq.lsp_ensure_capabilities( {
+require'lspconfig'.clangd.setup(coq.lsp_ensure_capabilities( {
 	on_attach = on_attach,
-	init_options = {
-		cache = {
-			directory = "/tmp/ccls_cache"
-		}
-	}
 }))
 
 require'lspconfig'.rust_analyzer.setup(coq.lsp_ensure_capabilities( {
@@ -70,5 +70,3 @@ require'lspconfig'.rust_analyzer.setup(coq.lsp_ensure_capabilities( {
 require'lspconfig'.jdtls.setup(coq.lsp_ensure_capabilities( {
 	on_attach = on_attach,
 }))
-
-
