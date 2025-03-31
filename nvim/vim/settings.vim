@@ -11,13 +11,13 @@ set ignorecase
 
 " indentation
 set tabstop=4
-set softtabstop=4
+set softtabstop=8
 set shiftwidth=4
 set autoindent
 set copyindent
 
 set smarttab
-set noexpandtab
+set expandtab
 
 set showmatch
 
