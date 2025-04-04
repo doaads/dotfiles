@@ -7,7 +7,7 @@
 (set-face-attribute 'default nil :height 120)
 
 ;; relative line numbers
-(setq doom-line-numbers-style 'relative)
+(setq display-line-numbers-type 'relative)
 
 (elfeed-org)
 (setq rmh-elfeed-org-files (list "~/org/elfeed.org"))
@@ -17,8 +17,8 @@
 
 ;(setq browse-url-browser-function 'eww-browse-url)
 
-(setq browse-url-browser-function 'browse-url-generic
-      browse-url-generic-program "firefox")
+;(setq browse-url-browser-function 'browse-url-generic
+;      browse-url-generic-program "firefox")
 
 ;; Some functionality uses this to identify you, e.g. GPG configuration, email
 ;; clients, file templates and snippets. It is optional.
