@@ -42,22 +42,9 @@ local lsp_flags = {
 	debounce_text_changes = 150,
 }
 
---require'lspconfig'.pyright.setup(coq.lsp_ensure_capabilities( {
---	on_attach = on_attach,
---}))
-
 require'lspconfig'.pyright.setup(( {
 	on_attach = on_attach,
 }))
-
---require'lspconfig'.ccls.setup(coq.lsp_ensure_capabilities( {
---	on_attach = on_attach,
---	init_options = {
---		cache = {
---			directory = "/tmp/ccls_cache"
---		}
---	}
---}))
 
 require'lspconfig'.clangd.setup(coq.lsp_ensure_capabilities( {
 	on_attach = on_attach,
@@ -68,5 +55,10 @@ require'lspconfig'.rust_analyzer.setup(coq.lsp_ensure_capabilities( {
 }))
 
 require'lspconfig'.jdtls.setup(coq.lsp_ensure_capabilities( {
+	on_attach = on_attach,
+}))
+
+require'lspconfig'.hls.setup(coq.lsp_ensure_capabilities( {
+    filetypes = { 'haskell', 'lhaskell', 'cabal' },
 	on_attach = on_attach,
 }))
