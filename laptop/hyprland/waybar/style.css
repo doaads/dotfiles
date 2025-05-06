@@ -1,0 +1,151 @@
+* {
+  font-size: 18px;
+  font-family: "ProggyClean Nerd Font";
+}
+
+window#waybar {
+    background: rgba(0,0,0,0);
+}
+
+#tray {
+  background: #1d1f21;
+  color: #c5c8c6;
+  margin: 3px 0px 3px 0px;
+  padding: 5px 5px 5px 8px; 
+  /*
+  border-top-left-radius: 10px;
+  border-bottom-left-radius: 10px;
+  */
+}
+
+#upower {
+  margin: 3px 0px 3px 0px;
+  background: #1d1f21;
+  padding: 5px;
+  color: #c5c8c6;
+}
+
+#workspaces {
+  margin: 0px 3px 3px 3px;
+}
+
+#workspaces button.visible {
+  background: #1d1f21;
+  color: #c5c8c6;
+  margin: 3px 3px 3px 3px;
+  padding: 0px 5px 0px 5px;
+}
+
+window#waybar.empty #window {
+	background-color: transparent;
+	/*opacity: 0.0;*/
+}
+
+#group-power {
+  margin: 3px 3px 3px 3px;
+  padding: 0px 0px 0px 0px;
+  background: #1d1f21;
+  border-top-left-radius: 10px;
+  border-bottom-left-radius: 10px;
+  border-top-right-radius: 10px;
+  border-bottom-right-radius: 10px;
+  color: #c5c8c6;
+}
+
+#custom-quit {
+  padding: 0px 5px 0px 5px;
+  background: #1d1f21;
+}
+
+#custom-quit:hover {
+  color: #666666;
+}
+
+#custom-reboot {
+  margin: 0px 0px 0px 0px;
+  padding: 0px 5px 0px 8px;
+  border-top-left-radius: 10px;
+  border-bottom-left-radius: 10px;
+  background: #1d1f21;
+}
+
+#custom-reboot:hover {
+  color: #666666;
+}
+
+#custom-shutdown {
+  padding: 0px 5px 0px 5px;
+  background: #1d1f21;
+}
+
+#custom-shutdown:hover {
+  color: #666666;
+}
+
+#custom-suspend {
+  margin: 0px 5px 0px 0px;
+  padding: 0px 5px 0px 5px;
+  border-top-right-radius: 10px;
+  border-bottom-right-radius: 10px;
+  background: #1d1f21;
+}
+
+#custom-suspend:hover {
+  color: #666666;
+}
+
+.drawer {
+  color: #c5c8c6;
+}
+
+#clock {
+  margin: 0px 3px 0px 3px;
+  padding: 0px 5px 0px 5px;
+  color: #FFF;
+  background: #1d1f21;
+  border-top-left-radius: 10px;
+  border-bottom-left-radius: 10px;
+  border-top-right-radius: 10px;
+  border-bottom-right-radius: 10px;
+  color: #c5c8c6;
+}
+
+#pulseaudio {
+  margin: 3px 3px 3px 0px;
+  padding: 5px 8px 5px 5px;
+  background: #1d1f21;
+  border-top-right-radius: 10px;
+  border-bottom-right-radius: 10px;
+  color: #c5c8c6;
+}
+
+#network {
+  background: #1d1f21;
+  color: #c5c8c6;
+  margin: 3px 0px 3px 0px;
+  padding: 5px 5px 5px 8px; 
+  border-top-left-radius: 10px;
+  border-bottom-left-radius: 10px;
+}
+
+#power-profiles-daemon {
+  margin: 3px 0px 3px 0px;
+  background: #1d1f21;
+  padding: 5px;
+  color: #c5c8c6;
+}
+
+#custom-news {
+  background: #1d1f21;
+  color: #c5c8c6;
+  margin: 3px 0px 3px 0px;
+  padding: 5px 5px 5px 8px; 
+  border-top-left-radius: 10px;
+  border-bottom-left-radius: 10px;
+}
+
+menu {
+  background: #1d1f21;
+  color: #c5c8c6;
+}
+

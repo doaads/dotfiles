@@ -15,6 +15,14 @@ if [ $# -lt 1 ]; then
 	exit 0
 fi
 
+if [ $# = 2 ]; then
+    platform="$2"
+    echo "Platform: $2"
+else
+    platform="laptop"
+    echo "Using default platform: ($platform)"
+fi
+
 case $1 in
 	"nvim")
 		dir="$(pwd)/nvim"
@@ -29,7 +37,7 @@ case $1 in
 		dest="$HOME/.zshrc"
 		;;
 	"hypr"|"waybar")
-		dir="$(pwd)/hyprland/$1"
+        dir="$(pwd)/$platform/hyprland/$1"
 		dest="$HOME/.config/$1"
 		;;
 	"kitty")
@@ -47,6 +55,15 @@ case $1 in
 esac
 
 echo "linking $dir to $dest"
+if [ -L "$dest" ]; then
+    echo "$dest exists and is a symlink, removing"
+    rm $dest
+elif [ -d "$dest" ]; then
+    echo "$dest exists, moving to ${dest}_old"
+    mv "$dest" "${dest}_old"
+fi
+
+
 ln -s $dir $dest
 if [ $? = 0 ]; then echo "done!"; else exit $?; fi
 
