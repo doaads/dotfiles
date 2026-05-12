@@ -1,5 +1,11 @@
+local clangtidy = require('lint').linters.clangtidy
+phpcs.args = {
+    '-fix'
+}
+
 require("lint").linters_by_ft = {
   python = {'ruff'},
+  cpp = {'clangtidy'}
 }
 
 vim.api.nvim_create_autocmd({ "BufWritePost" }, {

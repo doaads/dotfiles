@@ -1,31 +1,31 @@
 {
-    "layer": "top",
+    "layer": "bottom",
     "position": "top",
     "modules-left": ["hyprland/workspaces"],
     "modules-center": ["hyprland/window"],
-    "modules-right": ["network", "upower", "power-profiles-daemon", "pulseaudio", "group/group-power"],
+    "modules-right": ["network", "upower", "power-profiles-daemon", "pulseaudio", "cpu", "group/group-power"],
 
     "hyprland/workspaces": {
-		"format": "{icon} {windows}",
+		"format": "/ {icon} {windows} ",
 		"format-icons": {
 			"magic": "󱡄 "
 		},
 		"persistent-workspaces": {
 			"*": 0
 		},
-		"window-rewrite-default": "",
+		"window-rewrite-default": "",
 		"window-rewrite": {
-			"class<firefox>": " ", // Windows whose classes are "firefox",
-			"kitty": " ",
-			"class<emacs>": " "
+			"class<firefox>": "", // Windows whose classes are "firefox",
+			"kitty": "",
+			"class<emacs>": ""
 		},
 		"show-special": true
 	},
 
 	"hyprland/window": {
-		"format": "󱞡  {}",
+		"format": "󱞡 {}",
 		"separate-outputs": true,
-		"max-length": 100
+		"max-length": 80
 	},
 
 	"group/group-power": {
@@ -45,25 +45,25 @@
 	},
 
 	"custom/quit": {
-		"format": "󰍃 ",
+		"format": "[ 󰍃 ]",
 		"tooltip": false,
 		"on-click": "hyprctl dispatch exit"
 	},
 
 	"custom/reboot": {
-		"format": " ",
+		"format": "[  ]",
 		"tooltip": false,
 		"on-click": "reboot",
 	},
 
 	"custom/shutdown": {
-		"format": "⏻ ",
+		"format": "[ ⏻ ]",
 		"tooltip": false,
 		"on-click": "shutdown",
 	},
 
 	"custom/suspend": {
-		"format": "󰒲 ",
+		"format": "[ 󰒲 ]",
 		"tooltip": false,
 		"on-click": "systemctl suspend"
 	},
@@ -74,22 +74,6 @@
         "tooltip": false
     },
 	
-	// REPLACED WITH UPOWER FOR NOW DUE TO BAD PERFORMANCE
-    //"battery": {
-    //    "states": {
-    //        "good": 95,
-    //        "warning": 30,
-    //        "critical": 15
-    //    },
-    //    //"bat":"BAT1",
-    //    "format": "{icon}  {capacity}%",
-    //    "format-charging": "  {capacity}%",
-    //    "format-plugged": "  {capacity}%",
-    //    "format-discharging": " {capacity}%",
-    //    //"format-alt": "{icon} {time}",
-    //    "format-icons": ["", "", "", "", ""]
-    //},
-
 	"upower": {
 		"native-path": "BAT0",
 		"icon-size": 16,
@@ -99,9 +83,9 @@
 
     "network": {
         "format": "{ifname}",
-        "format-wifi": "  {essid}",
-        "format-ethernet": "  {ifname}",
-        "format-disconnected": "󱘖 ",
+        "format-wifi": "  [ {essid} ]",
+        "format-ethernet": "  [ {ifname} ]",
+        "format-disconnected": "[ 󱘖 Disconnected ]",
         "tooltip-format-wifi": " {signalStrength}%",
         "max-length": 30,
         "menu": "on-click",
@@ -113,8 +97,8 @@
     },
 
     "pulseaudio": {
-        "format": "{icon}  {volume}%",
-        "format-bluetooth": "{icon}  {volume}%",
+        "format": "{icon}  [ {volume}% ]",
+        "format-bluetooth": "{icon} {volume}%",
         "format-muted": "",
         "format-icons": {
             "headphone": "",
@@ -141,8 +125,18 @@
       }
     },
 
-    "custom/news": {
-    	"format": "󱀁 ",
-    	"on-click": "emacsclient --eval '(elfeed-update)' && emacsclient -c --eval '(elfeed)'"
-	}
+    "cpu": {
+     "interval": 1,
+     "format": "{icon}",
+     "format-icons": [
+          "<span color='#69ff94'>▁</span>", // green
+          "<span color='#2aa9ff'>▂</span>", // blue
+          "<span color='#f8f8f2'>▃</span>", // white
+          "<span color='#f8f8f2'>▄</span>", // white
+          "<span color='#ffffa5'>▅</span>", // yellow
+          "<span color='#ffffa5'>▆</span>", // yellow
+          "<span color='#ff9977'>▇</span>", // orange
+          "<span color='#dd532e'>█</span>"  // red
+     ]
+    },
 },

@@ -26,10 +26,14 @@ return require('packer').startup(function(use)
 	-- -------- Treesitter --------------
 
 	use {
-		'nvim-treesitter/nvim-treesitter',
+        'nvim-treesitter/nvim-treesitter',
+        branch = 'main'
+	}
+
+	use {
 		'nvim-treesitter/nvim-treesitter-context',
 		'nvim-treesitter/nvim-treesitter-textobjects',
-	}
+    }
 
 	-- -------- Completion --------------
 	

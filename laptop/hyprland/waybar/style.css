@@ -1,64 +1,69 @@
 * {
-  font-size: 20px;
-  font-family: "ProggyClean Nerd Font";
+  font-size: 14px;
+  font-family: "FiraCode Nerd Font";
+  font-style: italic;     /* makes the text cursive/italic */
 }
 
 window#waybar {
-    background: rgba(0,0,0,0);
+    /*background: rgba(0,0,0,0.0);*/
+    background: #333C43;
+    color: #D3C6AA;
 }
 
 #tray {
-  background: #1d1f21;
-  color: #c5c8c6;
+  color: #D3C6AA;
   margin: 3px 0px 3px 0px;
-  padding: 5px 5px 5px 8px; 
+  padding: 5px 0px 5px 0px; 
   /*
   border-top-left-radius: 10px;
   border-bottom-left-radius: 10px;
   */
 }
 
-#upower {
-  margin: 3px 0px 3px 0px;
-  background: #1d1f21;
-  padding: 5px;
-  color: #c5c8c6;
+#workspaces {
+  margin: 0px 0px 0px 0px;
+  border-top-left-radius: 0px;
+  border-bottom-left-radius: 0px;
+  border-top-right-radius: 0px;
+  border-bottom-right-radius: 0px;
 }
 
-#workspaces {
-  margin: 0px 3px 3px 3px;
+#workspaces button {
+  background: transparent;   /* removes the box */
+  color: #71856e;
+  padding: 0px 5px;     /* same padding, no jumps */
 }
 
 #workspaces button.visible {
-  background: #1d1f21;
-  color: #c5c8c6;
-  margin: 3px 3px 3px 3px;
-  padding: 0px 5px 0px 5px;
+  background: transparent;   /* removes the box */
+  color: #D3C6AA;
+  font-weight: bold;         /* makes the text bold */
+  margin: 0px 0px 0px 0px;
+  padding: 0px 5px;     /* same padding, no jumps */
 }
+
 
 window#waybar.empty #window {
 	background-color: transparent;
-	/*opacity: 0.0;*/
+}
+
+window#waybar {
+  padding-top: 5px;
+  padding-bottom: 0;
 }
 
 #group-power {
-  margin: 3px 3px 3px 3px;
+  margin: 0px 0px 0px 0px;
   padding: 0px 0px 0px 0px;
-  background: #1d1f21;
-  border-top-left-radius: 10px;
-  border-bottom-left-radius: 10px;
-  border-top-right-radius: 10px;
-  border-bottom-right-radius: 10px;
-  color: #c5c8c6;
+  color: #D3C6AA;
 }
 
 #custom-quit {
   padding: 0px 5px 0px 5px;
-  background: #1d1f21;
 }
 
 #custom-quit:hover {
-  color: #666666;
+  color: #71856e;
 }
 
 #custom-reboot {
@@ -66,20 +71,18 @@ window#waybar.empty #window {
   padding: 0px 5px 0px 8px;
   border-top-left-radius: 10px;
   border-bottom-left-radius: 10px;
-  background: #1d1f21;
 }
 
 #custom-reboot:hover {
-  color: #666666;
+  color: #71856e;
 }
 
 #custom-shutdown {
   padding: 0px 5px 0px 5px;
-  background: #1d1f21;
 }
 
 #custom-shutdown:hover {
-  color: #666666;
+  color: #71856e;
 }
 
 #custom-suspend {
@@ -87,58 +90,64 @@ window#waybar.empty #window {
   padding: 0px 5px 0px 5px;
   border-top-right-radius: 10px;
   border-bottom-right-radius: 10px;
-  background: #1d1f21;
 }
 
 #custom-suspend:hover {
-  color: #666666;
+  color: #71856e;
 }
 
 .drawer {
-  color: #c5c8c6;
+  color: #D3C6AA;
 }
 
 #clock {
-  margin: 0px 3px 0px 3px;
+  margin: 0px 0px 0px 0px;
   padding: 0px 5px 0px 5px;
   color: #FFF;
-  background: #1d1f21;
-  border-top-left-radius: 10px;
+  /*border-top-left-radius: 10px;
   border-bottom-left-radius: 10px;
   border-top-right-radius: 10px;
-  border-bottom-right-radius: 10px;
-  color: #c5c8c6;
+  border-bottom-right-radius: 10px;*/
+  color: #D3C6AA;
 }
 
 #pulseaudio {
-  margin: 3px 3px 3px 0px;
+  margin: 0px 0px 0px 0px;
   padding: 5px 8px 5px 5px;
-  background: #1d1f21;
-  border-top-right-radius: 10px;
-  border-bottom-right-radius: 10px;
-  color: #c5c8c6;
+  /*border-top-right-radius: 10px;
+  border-bottom-right-radius: 10px;*/
+  color: #D3C6AA;
 }
 
 #network {
-  background: #1d1f21;
-  color: #c5c8c6;
-  margin: 3px 0px 3px 0px;
-  padding: 5px 5px 5px 8px; 
-  border-top-left-radius: 10px;
-  border-bottom-left-radius: 10px;
+  color: #D3C6AA;
+  margin: 0px 0px 0px 0px;
+  padding: 0px 5px 0px 8px; 
+  /*border-top-left-radius: 10px;
+  border-bottom-left-radius: 10px;*/
+}
+
+#upower {
+  margin: 0px 0px 0px 0px;
+  padding: 0px 5px 0px 5px;
+  color: #D3C6AA;
+}
+
+#cpu {
+  margin: 0px 0px 0px 0px;
+  padding: 0px 5px 0px 5px;
+  color: #D3C6AA;
 }
 
 #power-profiles-daemon {
-  margin: 3px 0px 3px 0px;
-  background: #1d1f21;
-  padding: 5px;
-  color: #c5c8c6;
+  margin: 0px 0px 0px 0px;
+  padding: 0px 5px 0px 5px;
+  color: #D3C6AA;
 }
 
 #custom-news {
-  background: #1d1f21;
-  color: #c5c8c6;
-  margin: 3px 0px 3px 0px;
+  color: #D3C6AA;
+  margin: 0px 0px 0px 0px;
   padding: 5px 5px 5px 8px; 
   border-top-left-radius: 10px;
   border-bottom-left-radius: 10px;
@@ -146,6 +155,15 @@ window#waybar.empty #window {
 
 menu {
   background: #1d1f21;
-  color: #c5c8c6;
+  color: #D3C6AA;
 }
 
+#clock,
+#cpu,
+#network,
+#upower,
+#power-profiles-daemon,
+#pulseaudio,
+#group-power {
+  background: transparent;
+}

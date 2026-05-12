@@ -42,23 +42,30 @@ local lsp_flags = {
 	debounce_text_changes = 150,
 }
 
-require'lspconfig'.pyright.setup(( {
+vim.lsp.config("pyright", {
+    on_attach = on_attach,
+})
+
+vim.lsp.config("clangd", coq.lsp_ensure_capabilities( {
+	on_attach = on_attach,
+    cmd = { 'clangd', '--background-index', '--log=verbose', '--clang-tidy', '--inlay-hints=true'}
+}))
+
+vim.lsp.config("rust_analyzer", coq.lsp_ensure_capabilities( {
 	on_attach = on_attach,
 }))
 
-require'lspconfig'.clangd.setup(coq.lsp_ensure_capabilities( {
+vim.lsp.config("jdtls", coq.lsp_ensure_capabilities( {
 	on_attach = on_attach,
 }))
 
-require'lspconfig'.rust_analyzer.setup(coq.lsp_ensure_capabilities( {
-	on_attach = on_attach,
-}))
-
-require'lspconfig'.jdtls.setup(coq.lsp_ensure_capabilities( {
-	on_attach = on_attach,
-}))
-
-require'lspconfig'.hls.setup(coq.lsp_ensure_capabilities( {
+vim.lsp.config("hls", coq.lsp_ensure_capabilities( {
     filetypes = { 'haskell', 'lhaskell', 'cabal' },
 	on_attach = on_attach,
 }))
+
+vim.lsp.enable("pyright")
+vim.lsp.enable("clangd")
+vim.lsp.enable("rust_analyzer")
+vim.lsp.enable("jdtls")
+vim.lsp.enable("hls")
