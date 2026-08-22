@@ -8,10 +8,11 @@ if [ $# -lt 1 ]; then
 	printf "\t - nvim\n"
 	printf "\t - tmux\n"
 	printf "\t - zshrc\n"
-	printf "\t - hypr\n"
+	printf "\t - niri\n"
 	printf "\t - waybar\n"
 	printf "\t - kitty\n"
-	printf "\t - doom\n"
+    printf "\t - doom (deprecated)\n"
+    printf "\t - hypr (deprecated)\n"
 	exit 0
 fi
 
@@ -19,7 +20,7 @@ if [ $# = 2 ]; then
     platform="$2"
     echo "Platform: $2"
 else
-    platform="laptop"
+    platform="default"
     echo "Using default platform: ($platform)"
 fi
 
@@ -36,8 +37,12 @@ case $1 in
 		dir="$(pwd)/shell-term/.zshrc"
 		dest="$HOME/.zshrc"
 		;;
-	"hypr"|"waybar")
+	"hypr")
         dir="$(pwd)/$platform/hyprland/$1"
+		dest="$HOME/.config/$1"
+		;;
+	"niri"|"waybar")
+        dir="$(pwd)/$platform/wm/$1"
 		dest="$HOME/.config/$1"
 		;;
 	"kitty")
