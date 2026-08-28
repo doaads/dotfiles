@@ -1,0 +1,17 @@
+[2026-08-27 09:59:20.170] [info] Using configuration file /home/doaads/.config/waybar/config.jsonc
+[2026-08-27 09:59:20.214] [info] Unable to receive desktop appearance: GDBus.Error:org.freedesktop.portal.Error.NotFound: Requested setting not found
+[2026-08-27 09:59:20.214] [info] Using CSS file /home/doaads/.config/waybar/style.css
+[2026-08-27 09:59:20.223] [warning] Hyprland is not running, Hyprland IPC will not be available.
+[2026-08-27 09:59:20.223] [warning] module hyprland/workspaces: Disabling module "hyprland/workspaces", Hyprland IPC: HYPRLAND_INSTANCE_SIGNATURE was not set! (Is Hyprland running?)
+[2026-08-27 09:59:20.224] [warning] module hyprland/window: Disabling module "hyprland/window", Hyprland IPC: HYPRLAND_INSTANCE_SIGNATURE was not set! (Is Hyprland running?)
+[2026-08-27 09:59:20.380] [info] Bar configured (width: 1745, height: 28) for output: eDP-1
+[2026-08-27 09:59:25.294] [info] Quitting.
+[2026-08-27 09:59:25.300] [info] Hyprland IPC stopping...
+[2026-08-27 09:59:25.300] [error] Hyprland IPC: Couldn't shutdown socket
+[2026-08-27 09:59:28.253] [info] Using configuration file /home/doaads/.config/waybar/config.jsonc
+[2026-08-27 09:59:28.305] [info] Unable to receive desktop appearance: GDBus.Error:org.freedesktop.portal.Error.NotFound: Requested setting not found
+[2026-08-27 09:59:28.305] [info] Using CSS file /home/doaads/.config/waybar/style.css
+[2026-08-27 09:59:28.317] [warning] Hyprland is not running, Hyprland IPC will not be available.
+[2026-08-27 09:59:28.317] [warning] module hyprland/workspaces: Disabling module "hyprland/workspaces", Hyprland IPC: HYPRLAND_INSTANCE_SIGNATURE was not set! (Is Hyprland running?)
+[2026-08-27 09:59:28.317] [warning] module hyprland/window: Disabling module "hyprland/window", Hyprland IPC: HYPRLAND_INSTANCE_SIGNATURE was not set! (Is Hyprland running?)
+[2026-08-27 09:59:28.471] [info] Bar configured (width: 1745, height: 28) for output: eDP-1

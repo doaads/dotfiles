@@ -2,8 +2,8 @@
     "layer": "bottom",
     "position": "top",
     "modules-left": ["hyprland/workspaces"],
-    "modules-center": ["hyprland/window"],
-    "modules-right": ["network", "upower", "power-profiles-daemon", "pulseaudio", "cpu", "group/group-power"],
+    "modules-center": ["niri/window"],
+    "modules-right": ["group/group-network", "upower", "power-profiles-daemon", "pulseaudio", "cpu", "group/group-power"],
 
     "hyprland/workspaces": {
 		"format": "/ {icon} {windows} ",
@@ -41,6 +41,19 @@
 			"custom/shutdown",
 			"custom/quit",
 			"custom/suspend"
+		]
+	},
+
+	"group/group-network": {
+		"orientation": "horizontal",
+		"drawer": {
+			"transition-duration": 500,
+			"transition-left-to-right": false,
+			"children-class": "drawer",
+		},
+		"modules": [
+		    "network",
+			"network#homelab"
 		]
 	},
 
@@ -93,6 +106,18 @@
         "menu-actions": {
         	"nmtui": "kitty -e nmtui-connect",
         	"nmcm": "nm-connection-editor"
+		}
+    },
+
+    "network#homelab": {
+        "interface": "homelab",
+        "format": "󰲝 {ifname}",
+        "max-length": 30,
+        "menu": "on-click",
+        "menu-file": "~/.config/waybar/homelab_vpn_menu.xml",
+        "menu-actions": {
+        	"nmtui": "nmcli con up homelab",
+        	"nmcm": "nmcli con down homelab"
 		}
     },
 
