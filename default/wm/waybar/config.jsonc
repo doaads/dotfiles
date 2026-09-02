@@ -1,32 +1,31 @@
 {
     "layer": "bottom",
     "position": "top",
-    "modules-left": ["hyprland/workspaces"],
+    "modules-left": ["niri/workspaces"],
     "modules-center": ["niri/window"],
     "modules-right": ["group/group-network", "upower", "power-profiles-daemon", "pulseaudio", "cpu", "group/group-power"],
 
-    "hyprland/workspaces": {
-		"format": "/ {icon} {windows} ",
+    "niri/workspaces": {
+		"format": "{icon}{index} ",
 		"format-icons": {
-			"magic": "󱡄 "
-		},
-		"persistent-workspaces": {
-			"*": 0
-		},
-		"window-rewrite-default": "",
-		"window-rewrite": {
-			"class<firefox>": "", // Windows whose classes are "firefox",
-			"kitty": "",
-			"class<emacs>": ""
-		},
-		"show-special": true
+			"active": "/  ",
+			"default": "/  "
+		}
 	},
 
-	"hyprland/window": {
-		"format": "󱞡 {}",
+	"niri/window": {
+		"format": "{}",
 		"separate-outputs": true,
-		"max-length": 80
+		"max-length": 60
 	},
+
+	"tray": {
+        "icon-size": 12,
+        "spacing": 5,
+        "icons": {
+            "nm-applet": false
+        }
+    },
 
 	"group/group-power": {
 		"orientation": "horizontal",
@@ -40,27 +39,31 @@
 			"custom/reboot",
 			"custom/shutdown",
 			"custom/quit",
-			"custom/suspend"
+			"custom/suspend",
+			"inhibitor"
 		]
 	},
 
 	"group/group-network": {
 		"orientation": "horizontal",
 		"drawer": {
-			"transition-duration": 500,
+			"transition-duration": 100,
 			"transition-left-to-right": false,
-			"children-class": "drawer",
+			"click-to-reveal": true,
+			"children-class": "drawer"
 		},
 		"modules": [
 		    "network",
-			"network#homelab"
+			"tray",
+			"network#homelab",
+			"network#vpn"
 		]
 	},
 
 	"custom/quit": {
 		"format": "[ 󰍃 ]",
 		"tooltip": false,
-		"on-click": "hyprctl dispatch exit"
+		"on-click": "niri msg action quit"
 	},
 
 	"custom/reboot": {
@@ -81,6 +84,15 @@
 		"on-click": "systemctl suspend"
 	},
 
+	"inhibitor": {
+        "what": ["handle-lid-switch", "idle"],
+        "format": "[ {icon} ]",
+        "format-icons": {
+            "activated": "",
+            "deactivated": ""
+        }
+    },
+
     "clock": {
         "format": "{:%H:%M}",
         "format-alt": "{:%a %b %d}",
@@ -97,12 +109,13 @@
     "network": {
         "format": "{ifname}",
         "format-wifi": "  [ {essid} ]",
-        "format-ethernet": "  [ {ifname} ]",
-        "format-disconnected": "[ 󱘖 Disconnected ]",
-        "tooltip-format-wifi": " {signalStrength}%",
+        "format-ethernet": "󰛳  [ {ifname} ]",
+        "format-disconnected": "[ 󱘖 ]",
+        "format-disabled": "[ 󰯡 ]",
+        "tooltip-format-wifi": "SIG: <b>{signalStrength}%</b>\nFREQ: <b>{frequency}GHz</b>\nIP: <b>{ipaddr}</b>\nGW: <b>{gwaddr}</b>",
         "max-length": 30,
-        "menu": "on-click",
-        "menu-file": "~/.config/waybar/network_menu.xml",
+        //"menu": "on-click",
+        //"menu-file": "~/.config/waybar/network_menu.xml",
         "menu-actions": {
         	"nmtui": "kitty -e nmtui-connect",
         	"nmcm": "nm-connection-editor"
@@ -111,13 +124,31 @@
 
     "network#homelab": {
         "interface": "homelab",
-        "format": "󰲝 {ifname}",
+        "format": " 󰲝 {ifname}",
+        "format-disconnected": " 󰲝 ",
         "max-length": 30,
         "menu": "on-click",
         "menu-file": "~/.config/waybar/homelab_vpn_menu.xml",
         "menu-actions": {
-        	"nmtui": "nmcli con up homelab",
-        	"nmcm": "nmcli con down homelab"
+        	"hlc": "nmcli con up homelab",
+        	"hld": "nmcli con down homelab",
+        	"mc": "mullvad connect",
+        	"md": "mullvad disconnect"
+		}
+    },
+
+    "network#vpn": {
+        "interface": "wg0-*",
+        "format": "{ifname}",
+        "format-disconnected": "",
+        "max-length": 30,
+        "menu": "on-click",
+        "menu-file": "~/.config/waybar/homelab_vpn_menu.xml",
+        "menu-actions": {
+        	"hlc": "nmcli con up homelab",
+        	"hld": "nmcli con down homelab",
+        	"mc": "mullvad connect",
+        	"md": "mullvad disconnect"
 		}
     },
 

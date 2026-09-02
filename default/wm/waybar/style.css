@@ -34,7 +34,7 @@ window#waybar {
   padding: 0px 5px;     /* same padding, no jumps */
 }
 
-#workspaces button.visible {
+#workspaces button.active {
   background: transparent;   /* removes the box */
   color: #D3C6AA;
   font-weight: bold;         /* makes the text bold */

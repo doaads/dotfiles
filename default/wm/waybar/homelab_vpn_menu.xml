@@ -2,16 +2,44 @@
 <interface>
   <object class="GtkMenu" id="menu">
     <child>
-        <object class="GtkMenuItem" id="nmtui">
-			<property name="label">󰌘  Connect</property>
+      <object class="GtkMenuItem" id="homelab_header">
+        <property name="label">── Homelab ──</property>
+        <property name="sensitive">False</property>
+      </object>
+    </child>
+    <child>
+        <object class="GtkMenuItem" id="hlc">
+			<property name="label">󰌘  Connect </property>
         </object>
     </child>
     <child>
       <object class="GtkSeparatorMenuItem" id="delimiter1"/>
     </child>
     <child>
-		<object class="GtkMenuItem" id="nmcm">
-			<property name="label">󰌙  Disconnect</property>
+		<object class="GtkMenuItem" id="hld">
+			<property name="label">󰌙  Disconnect </property>
+		</object>
+    </child>
+    <child>
+      <object class="GtkSeparatorMenuItem" id="delimiter2"/>
+    </child>
+    <child>
+      <object class="GtkMenuItem" id="mullvad_header">
+        <property name="label">── Mullvad ──</property>
+        <property name="sensitive">False</property>
+      </object>
+    </child>
+    <child>
+		<object class="GtkMenuItem" id="mc">
+			<property name="label">󰌘  Connect </property>
+		</object>
+    </child>
+    <child>
+      <object class="GtkSeparatorMenuItem" id="delimiter3"/>
+    </child>
+    <child>
+		<object class="GtkMenuItem" id="md">
+			<property name="label">󰌙  Disconnect </property>
 		</object>
     </child>
   </object>
