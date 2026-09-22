@@ -111,7 +111,7 @@ output "eDP-1" {
 // https://niri-wm.github.io/niri/Configuration:-Layout
 layout {
     // Set gaps around windows in logical pixels.
-    gaps 8
+    gaps 2
 
     // When to center a column when changing focus, options are:
     // - "never", default behavior, focusing an off-screen column will keep at the left
@@ -268,7 +268,7 @@ layout {
 // See the binds section below for more spawn examples.
 
 // This line starts waybar, a commonly used bar for Wayland compositors.
-spawn-at-startup "waybar"
+spawn-at-startup "systemctl" "--user" "start" "waybar"
 spawn-at-startup "swaybg" "-i" "/home/doaads/Pictures/wallpaper.jpg" "-m" "fill"
 spawn-at-startup "nm-applet" "--indicator"
 

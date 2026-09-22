@@ -42,7 +42,7 @@ ZSH_THEME="robbyrussell"
 # DISABLE_AUTO_TITLE="true"
 
 # Uncomment the following line to enable command auto-correction.
-# ENABLE_CORRECTION="true"
+ENABLE_CORRECTION="true"
 
 # Uncomment the following line to display red dots whilst waiting for completion.
 # You can also set it to another string to have that shown instead of the default red dots.
@@ -71,7 +71,11 @@ ZSH_THEME="robbyrussell"
 # Custom plugins may be added to $ZSH_CUSTOM/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git)
+plugins=(
+    git
+    zsh-autosuggestions
+    zsh-syntax-highlighting
+)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -84,10 +88,13 @@ source $ZSH/oh-my-zsh.sh
 
 # Preferred editor for local and remote sessions
 # if [[ -n $SSH_CONNECTION ]]; then
-#   export EDITOR='vim'
+#   export EDITOR='nvim'
 # else
 #   export EDITOR='nvim'
 # fi
+
+export EDITOR='nvim'
+export VISUAL='nvim'
 
 # Compilation flags
 # export ARCHFLAGS="-arch $(uname -m)"
@@ -103,3 +110,25 @@ source $ZSH/oh-my-zsh.sh
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
+
+export JAVA_HOME="/usr/lib/jvm/default"
+
+# Created by `pipx` on 2024-11-05 07:54:34
+export PATH="$PATH:/home/doaads/.local/bin"
+
+#alias acpoet="source $(poetry env info --path)/bin/activate"
+
+[ -f "/home/doaads/.ghcup/env" ] && . "/home/doaads/.ghcup/env" # ghcup-env
+
+#bindkey -v
+
+# Alt+Left/Right: move by word
+bindkey -M emacs '\e[1;3D' backward-word
+bindkey -M emacs '\e[1;3C' forward-word
+
+# Also bind them in vi insert mode, if applicable
+bindkey -M viins '\e[1;3D' backward-word
+bindkey -M viins '\e[1;3C' forward-word
+
+# temporary
+source $HOME/.nix-profile/etc/profile.d/hm-session-vars.sh

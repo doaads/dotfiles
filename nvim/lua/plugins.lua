@@ -101,7 +101,7 @@ return require('packer').startup(function(use)
 
 	-- Misc
 	use {
-		'SirVer/ultisnips', -- snippets
+		-- 'SirVer/ultisnips', -- snippets
 		'christoomey/vim-tmux-navigator', -- navigating tmux
 		'bfrg/vim-cpp-modern', -- modern cpp syntax highlighting
 		'lambdalisue/suda.vim' -- sudo r/w file
